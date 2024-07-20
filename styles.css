@@ -154,28 +154,45 @@ main:not(#galery-main){
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-left: 20%;
-  width: 60%;
+  padding-top: 2vh;
+  padding-bottom: 2vh;
+  margin-top: 10vh;
+  margin-left: 30%;
+  width: 40%;
   background-color: var(--bg-color);
   border-radius: 30px
 }
 .login-input{
-  margin-top: 5%;
-  margin-bottom: 5%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  padding: 1%;
+  width: 80%;
+  border-radius: 10px;
+  color: var(--text-color);
+  font-size: large;
+}
+.login-button-div{
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.login-button-family{
+  margin: 2%;
+  padding: 1%;
+  font-size: x-large;
   width: 100%;
   border-radius: 10px;
-  background-color: var(--bg-color);
-  color: var(--text-color);
 }
 .login-button{
-  margin-top: 1%;
-  margin-bottom: 1%;
-  width: 100%;
-  border-radius: 10px;
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+}
+.back-button{
   background-color: var(--primary-color);
   color: var(--text-color);
 }
-
 
 ::-webkit-scrollbar {
   width: 0px; 
