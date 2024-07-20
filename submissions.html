@@ -5,23 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Подача показаний</title>
     <link rel="stylesheet" href="./styles.css" />
+    <style>
+        body{
+            background: url(src/image1.jpg) no-repeat center top;
+            background-size: 100% auto;
+        }
+        header{
+            background: transparent;
+        }
+        .name{
+            color: var(--primary-color);
+        }
+        .contacts > p{
+            color: var(--primary-color);
+        }
+        nav {
+            background: var(--bg-color);
+        }
+    </style>
 </head>
 <body>
     <a href="/contacts.html" class="contacts-link">
-    <header>    
+    <header>
         <div class="contacts-div">
-        <div class="name"><h1>СНТ "Флотское"</h1></div>
-        <div class="contacts">
-            <p>Контакты</p>
-            <p>email</p>
-            <p>+79000000000</p>
-        </div>
-        </div>
-        <div class="header-change"></div>
-    </header> 
+            <div class="name"><h1>СНТ "Флотское"</h1></div>
+            <div class="contacts">
+                <p>Контакты</p>
+                <p>email</p>
+                <p>+79000000000</p>
+            </div>
+            </div>
+            <div class="header-change"></div>
+    </header>
     </a>
     <nav class="navigation">
-        <a href="/main.html" class="home-icon active">Главная</a>
+        <a href="/" class="home-icon active">Главная</a>
         <a href="/news.html" class="nav-icon active">Новости</a>
         <a href="usefulInfo.html" class="nav-icon active">Полезная информация</a>
         <a href="/submissions.html" class="nav-icon active nav-icon-chosen">Подача показаний</a>
@@ -29,23 +47,16 @@
         <a href="/galery.html" class="nav-icon active last-icon">Галерея</a>
     </nav>
     <main>
-        <div class="main-change"></div>
-        <div class="main-transparency-div">
-        <div class="main-div">
-            <p>
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.   
-                Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam 
-                Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.   
-                Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.   
-                Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis.   
-                At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, At accusam aliquyam diam diam dolore dolores duo eirmod eos erat, et nonumy sed tempor et et invidunt justo labore Stet clita ea et gubergren, kasd magna no rebum. sanctus sea sed takimata ut vero voluptua. est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
-            </p>
-        </div>
+        <div class="login-div">
+            <input class="login-input" type="text" placeholder="Улица" \>
+            <input class="login-input" type="image" placeholder="url(src/image1.jpg)" \>
+            <div class="login-button-div">
+                <button class="login-button login-button-family">Отправить</button>
+            </div>
         </div>
     </main>
     <footer>
-        &copy; 
+        &copy; <br>
     </footer>
 </body>
-<script src="./script.js"></script>
 </html>
