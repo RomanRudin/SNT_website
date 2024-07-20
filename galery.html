@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Галерея</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link
+        rel="stylesheet"
+        href="https://pro.fontawesome.com/releases/v5.15.2/css/all.css"
+    />
+</head>
+<body>
+    <a href="/contacts.html" class="contacts-link">
+    <header>    
+        <div class="contacts-div">
+        <div class="name"><h1>СНТ "Флотское"</h1></div>
+        <div class="contacts">
+            <p>Контакты</p>
+            <p>email</p>
+            <p>+79000000000</p>
+        </div>
+        </div>
+        <div class="header-change"></div>
+    </header> 
+    </a>
+    <style>
+        #galery-main {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+        .carousel-div{
+            max-width: 100vw;
+            overflow-x: hidden;
+        }
+        .carousel {
+            width: 100%;
+            display: flex;
+            transition: 0.5s;
+            overflow-x: hidden;
+        }
+        img{
+            aspect-ratio: 16/9;
+            object-fit: cover;
+        }
+        i {
+            padding: 10px;
+            font-size: 50px;
+            color: rgb(0, 0, 0);
+            cursor: pointer;
+        }
+    </style>
+    <nav class="navigation">
+        <a href="/main.html" class="home-icon active">Главная</a>
+        <a href="/news.html" class="nav-icon active">Новости</a>
+        <a href="usefulInfo.html" class="nav-icon active">Полезная информация</a>
+        <a href="/submissions.html" class="nav-icon active">Подача показаний</a>
+        <a href="/docs.html" class="nav-icon active">Документы и отчёты</a>
+        <a href="/galery.html" class="nav-icon active last-icon nav-icon-chosen">Галерея</a>
+    </nav>
+    <main id="galery-main">
+        <nav class="carousel-div">
+            <i class="fas fa-chevron-left" id="arrowleft"></i>
+            <div id="carousel">
+            </div>
+            <i class="fas fa-chevron-right" id="arrowright"></i>
+        </nav>
+    </main>
+    <footer>
+        &copy; 
+    </footer>
+</body>
+<script src="./script.js"></script>
+<script src="./galery.js"></script>
+</html>
