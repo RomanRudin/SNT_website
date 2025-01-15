@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Контакты</title>
+    <title>Полезная информация</title>
     <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
@@ -12,9 +12,15 @@
         <div class="contacts-div">
         <div class="name"><h1>СНТ "Флотское"</h1></div>
         <div class="contacts">
+            {% if contact %}
+            <p>{{ contact.name }}</p>
+            <p>{{ contact.email }}</p>
+            <p>{{ contact.phone }}</p>
+            {% else %}
             <p>Контакты</p>
             <p>email</p>
             <p>+79000000000</p>
+            {% endif %}
         </div>
         </div>
         <div class="header-change"></div>
@@ -23,37 +29,36 @@
     <nav class="navigation">
         <a href="/main.html" class="home-icon active">Главная</a>
         <a href="/news.html" class="nav-icon active">Новости</a>
-        <a href="usefulInfo.html" class="nav-icon active">Полезная информация</a>
+        <a href="usefulInfo.html" class="nav-icon active nav-icon-chosen">Полезная информация</a>
         <a href="/submissions.html" class="nav-icon active">Подача показаний</a>
         <a href="/docs.html" class="nav-icon active">Документы и отчёты</a>
         <a href="/galery.html" class="nav-icon active last-icon">Галерея</a>
     </nav>
     <main>
+        <!-- {% if not request.user.is_authenticated %} HERE! -->
+        {% if usefulInfo_list %}
+        {% for usefulInfo in usefulInfo_list %}
         <div class="main-change"></div>
-        <div class="contacts-transparency-div">
+        <div class="main-transparency-div">
         <div class="main-div">
-            <h2>Должность</h2>
-            <p>Описание</p>
-            <p>Email</p>
-            <p>Номер телефона</p>
+            <p>
+                {{ usefulInfo.text }}
+            </p>
         </div>
         </div>
-        <div class="contacts-transparency-div">
+        </div>
+        {% endfor %}
+        {% else %}
+        <div class="main-change"></div>
+        <div class="main-transparency-div">
         <div class="main-div">
-            <h2>Должность</h2>
-            <p>Описание</p>
-            <p>Email</p>
-            <p>Номер телефона</p>
+            <p>
+                Полезной информации нет
+            </p>
         </div>
         </div>
-        <div class="contacts-transparency-div">
-        <div class="main-div">
-            <h2>Должность</h2>
-            <p>Описание</p>
-            <p>Email</p>
-            <p>Номер телефона</p>
         </div>
-        </div>
+        {% endif %}
     </main>
     <footer>
         &copy; 

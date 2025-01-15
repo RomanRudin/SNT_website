@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Документы и отчёты</title>
+    <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+    <a href="/contacts.html" class="contacts-link">
+    <header>    
+        <div class="contacts-div">
+        <div class="name"><h1>СНТ "Флотское"</h1></div>
+        <div class="contacts">
+            {% if contact %}
+            <p>{{ contact.name }}</p>
+            <p>{{ contact.email }}</p>
+            <p>{{ contact.phone }}</p>
+            {% else %}
+            <p>Контакты</p>
+            <p>email</p>
+            <p>+79000000000</p>
+            {% endif %}
+        </div>
+        </div>
+        <div class="header-change"></div>
+    </header> 
+    </a>
+    <nav class="navigation">
+        <a href="/main.html" class="home-icon active">Главная</a>
+        <a href="/news.html" class="nav-icon active">Новости</a>
+        <a href="usefulInfo.html" class="nav-icon active">Полезная информация</a>
+        <a href="/submissions.html" class="nav-icon active">Подача показаний</a>
+        <a href="/docs.html" class="nav-icon active nav-icon-chosen">Документы и отчёты</a>
+        <a href="/galery.html" class="nav-icon active last-icon">Галерея</a>
+    </nav>
+    <main>
+        {% if docs_list %}
+        {% for doc in docs_list %}
+        <div class="main-change"></div>
+        <div class="main-transparency-div">
+        <div class="main-div">
+            <p>
+                {{ doc.text }}
+            </p>
+            <p> {{ doc.date }}</p>
+        </div>
+        </div>
+        </div>
+        {% endfor %}
+        {% else %}
+        <div class="main-change"></div>
+        <div class="main-transparency-div">
+        <div class="main-div">
+            <p>
+                Документов нет
+            </p>
+        </div>
+        </div>
+        </div>
+        {% endif %}
+    </main>
+    <footer>
+        &copy; 
+    </footer>
+</body>
+<script src="./script.js"></script>
+</html>

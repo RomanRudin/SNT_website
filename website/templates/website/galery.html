@@ -16,9 +16,15 @@
         <div class="contacts-div">
         <div class="name"><h1>СНТ "Флотское"</h1></div>
         <div class="contacts">
+            {% if contact %}
+            <p>{{ contact.name }}</p>
+            <p>{{ contact.email }}</p>
+            <p>{{ contact.phone }}</p>
+            {% else %}
             <p>Контакты</p>
             <p>email</p>
             <p>+79000000000</p>
+            {% endif %}
         </div>
         </div>
         <div class="header-change"></div>
