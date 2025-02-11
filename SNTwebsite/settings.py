@@ -30,6 +30,8 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+STATIC_URL = '/website/static/'
+
 INSTALLED_APPS = [
     'website.apps.WebsiteConfig',
     'django.contrib.admin',

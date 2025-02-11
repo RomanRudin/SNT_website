@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Подача показаний</title>
-    <link rel="stylesheet" href="./styles.css" />
-    <style>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />    <style>
         body{
             background: url(src/image1.jpg) no-repeat center top;
             background-size: 100% auto;
@@ -45,12 +45,12 @@
     </header> 
     </a>
     <nav class="navigation">
-        <a href="/" class="home-icon active">Главная</a>
-        <a href="/news.html" class="nav-icon active">Новости</a>
-        <a href="usefulInfo.html" class="nav-icon active">Полезная информация</a>
-        <a href="/submissions.html" class="nav-icon active nav-icon-chosen">Подача показаний</a>
-        <a href="/docs.html" class="nav-icon active">Документы и отчёты</a>
-        <a href="/galery.html" class="nav-icon active last-icon">Галерея</a>
+        <a href="{% url 'website:main' %}" class="home-icon active">Главная</a>
+        <a href="{% url 'website:news' %}" class="nav-icon active">Новости</a>
+        <a href="{% url 'website:usefullinfo' %}" class="nav-icon active">Полезная информация</a>
+        <a href="{% url 'website:submissions' %}" class="nav-icon active nav-icon-chosen">Подача показаний</a>
+        <a href="{% url 'website:docs' %}" class="nav-icon active">Документы и отчёты</a>
+        <a href="{% url 'website:galery' %}" class="nav-icon active last-icon">Галерея</a>
     </nav>
     <main>
         <div class="login-div">

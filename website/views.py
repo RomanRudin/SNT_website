@@ -6,7 +6,7 @@ from .models import Contacts, Gallery, Docs, News, UsefuleInfo, SubmissionsElect
 
 
 def index(request) -> HttpResponse:
-    return render(request, "main/index.html")
+    return render(request, "website/main.html")
 
 def contacts(request) -> HttpResponse:
     contact = Contacts.objects.order_by("-job")[0]
@@ -47,8 +47,8 @@ def submissions(request) -> HttpResponse:
     return render(request, "main/submissions.html", context)
 
     
-def usefulinfo(request) -> HttpResponse:
+def usefullinfo(request) -> HttpResponse:
     contact = Contacts.objects.order_by("-job")[0]
     usefulInfo_list = UsefuleInfo.objects.order_by("-index")
     context = {"usefulInfo_list": usefulInfo_list, "contact": contact}
-    return render(request, "main/usefulinfo.html", context)
+    return render(request, "main/usefullinfo.html", context)

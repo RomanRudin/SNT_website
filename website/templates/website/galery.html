@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Галерея</title>
-    <link rel="stylesheet" href="./styles.css" />
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
     <link
         rel="stylesheet"
         href="https://pro.fontawesome.com/releases/v5.15.2/css/all.css"
@@ -58,12 +59,12 @@
         }
     </style>
     <nav class="navigation">
-        <a href="/main.html" class="home-icon active">Главная</a>
-        <a href="/news.html" class="nav-icon active">Новости</a>
-        <a href="usefulInfo.html" class="nav-icon active">Полезная информация</a>
-        <a href="/submissions.html" class="nav-icon active">Подача показаний</a>
-        <a href="/docs.html" class="nav-icon active">Документы и отчёты</a>
-        <a href="/galery.html" class="nav-icon active last-icon nav-icon-chosen">Галерея</a>
+        <a href="{% url 'website:main' %}" class="home-icon active">Главная</a>
+        <a href="{% url 'website:news' %}" class="nav-icon active">Новости</a>
+        <a href="{% url 'website:usefullinfo' %}" class="nav-icon active">Полезная информация</a>
+        <a href="{% url 'website:submissions' %}" class="nav-icon active">Подача показаний</a>
+        <a href="{% url 'website:docs' %}" class="nav-icon active">Документы и отчёты</a>
+        <a href="{% url 'website:galery' %}" class="nav-icon active last-icon nav-icon-chosen">Галерея</a>
     </nav>
     <main id="galery-main">
         <nav class="carousel-div">
@@ -77,6 +78,6 @@
         &copy; 
     </footer>
 </body>
-<script src="./script.js"></script>
-<script src="./galery.js"></script>
+<script src="{% static 'js/script.js' %}"></script>
+<script src="{{ STATIC_URL }}js/galery.js"></script>
 </html>
