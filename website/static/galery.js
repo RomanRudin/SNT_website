@@ -4,7 +4,7 @@ let carousel = document.getElementById("carousel");
 
 for (let i = 1; i <= 13; i++){
     let img = document.createElement("img");
-    img.src = "src/image" + i + ".jpg"
+    img.src = "/static/src/image" + i + ".jpg"
     carousel.appendChild(img);
 }
 

@@ -6,6 +6,12 @@
     <title>Полезная информация</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/styles.css' %}" /></head>
+    <style>
+        main{
+            background: url("{{ main_image }}") no-repeat center top;
+            background-size: cover;
+        }
+    </style>
 <body>
     <a href="/contacts.html" class="contacts-link">
     <header>    
@@ -16,10 +22,8 @@
             <p>{{ contact.name }}</p>
             <p>{{ contact.email }}</p>
             <p>{{ contact.phone }}</p>
-            {% else %}
-            <p>Контакты</p>
-            <p>email</p>
-            <p>+79000000000</p>
+            {% else %}            
+            <p>Контакты не найдены</p>
             {% endif %}
         </div>
         </div>
@@ -64,5 +68,5 @@
         &copy; 
     </footer>
 </body>
-<script src="{% static 'js/script.js' %}"></script>
+<!-- <script src="{% static 'script.js' %}"></script> -->
 </html>

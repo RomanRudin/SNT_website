@@ -6,6 +6,12 @@
     <title>Контакты</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+    <style>
+        main{
+            background: url("{{ main_image }}") no-repeat center top;
+            background-size: cover;
+        }
+    </style>
 </head>
 <body>
     <a href="/contacts.html" class="contacts-link">
@@ -62,5 +68,5 @@
         &copy; 
     </footer>
 </body>
-<script src="{% static 'js/script.js' %}"></script>
+<!-- <script src="{% static 'js/script.js' %}"></script> -->
 </html>

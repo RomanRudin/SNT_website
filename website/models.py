@@ -10,10 +10,7 @@ class Contacts(models.Model):
 
 
 class Gallery(models.Model):
-    # question = models.ForeignKey(Question, on_delete=models.CASCADE)
-    choice_text = models.CharField(max_length=200)
-    # votes = models.IntegerField(default=0)
-
+    pass
 
 class Docs(models.Model):
     # text = models.FilePathField()
@@ -28,6 +25,8 @@ class News(models.Model):
 
 
 class UsefuleInfo(models.Model):
+    title = models.CharField(max_length=200)
+    text = models.TextField()
     date = models.DateTimeField()
 
 
