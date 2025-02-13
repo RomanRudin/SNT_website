@@ -13,7 +13,7 @@
         }
     </style>
 <body>
-    <a href="/contacts.html" class="contacts-link">
+    <a href="{% url 'website:contacts' %}" class="contacts-link">
     <header>    
         <div class="contacts-div">
         <div class="name"><h1>СНТ "Флотское"</h1></div>
@@ -33,10 +33,10 @@
     <nav class="navigation">
         <a href="{% url 'website:main' %}" class="home-icon active">Главная</a>
         <a href="{% url 'website:news' %}" class="nav-icon active nav-icon-chosen">Новости</a>
-        <a href="{% url 'website:usefullinfo' %}" class="nav-icon active">Полезная информация</a>
-        <a href="{% url 'website:submissions' %}" class="nav-icon active">Подача показаний</a>
-        <a href="{% url 'website:docs' %}" class="nav-icon active">Документы и отчёты</a>
-        <a href="{% url 'website:galery' %}" class="nav-icon active last-icon">Галерея</a>
+        <!-- <a href="{% url 'website:usefullinfo' %}" class="nav-icon active">Полезная информация</a> -->
+        <!-- <a href="{% url 'website:submissions' %}" class="nav-icon active">Подача показаний</a> -->
+        <!-- <a href="{% url 'website:docs' %}" class="nav-icon active">Документы и отчёты</a> -->
+        <!-- <a href="{% url 'website:galery' %}" class="nav-icon active last-icon">Галерея</a> -->
     </nav>
     <main>
         {% if news_list %}

@@ -7,7 +7,10 @@ from .models import Contacts, Gallery, Docs, News, UsefuleInfo, SubmissionsElect
 
 
 def index(request) -> HttpResponse:
-    return render(request, "website/main.html", context={"main_image": f"/static/src/image{randint(1, 13)}.jpg"})
+    contact = Contacts.objects.order_by("-job")[0]
+    context = {"contact": contact, "main_image": f"/static/src/image{randint(1, 13)}.jpg"}
+    return render(request, "website/main.html", context)
+
 
 def contacts(request) -> HttpResponse:
     contact = Contacts.objects.order_by("-job")[0]

@@ -33,7 +33,6 @@ class UsefuleInfo(models.Model):
 class SubmissionsWater(models.Model):
     adress = models.CharField(max_length=200)
     date = models.DateTimeField("Date of submission")
-    data = models.IntegerField()
 
 
 class SubmissionsElectricity(models.Model):
