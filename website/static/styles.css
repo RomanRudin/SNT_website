@@ -51,10 +51,10 @@ nav > a:hover:not(.nav-icon-chosen) {
     flex-grow: 3; 
 }
   
-.nav-icon:not(.last-icon), .home-icon {
+.nav-icon:not(.last-icon) {
     border-right: var(--primary-color) dashed 1px; 
 }
-.nav-icon-chosen{
+.nav-icon-active{
   box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.45);
   background-color: var(--secondary-color);
 }
@@ -68,8 +68,6 @@ body{
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: var(--text-color);
 }
-#main-page{
-  animation: entranceAnim 1s ease 0s 1 normal forwards; }
 
 @keyframes entranceAnim {
     0% {

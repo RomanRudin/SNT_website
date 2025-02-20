@@ -9,7 +9,7 @@ from .models import Contacts, Gallery, Docs, News, UsefuleInfo, SubmissionsElect
 def index(request) -> HttpResponse:
     contact = Contacts.objects.order_by("-job")[0]
     context = {"contact": contact, "main_image": f"/static/src/image{randint(1, 13)}.jpg"}
-    return render(request, "website/main.html", context)
+    return render(request, "website/index.html", context)
 
 
 def contacts(request) -> HttpResponse:

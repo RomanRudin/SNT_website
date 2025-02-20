@@ -1,0 +1,7 @@
+<nav class="navigation">
+    <a href="{% url 'index' %}" class="nav-icon home-icon {% if active_page == 'index' %} nav-icon-active {% endif %}">Главная</a>
+    <a href="{% url 'news' %}" class="nav-icon {% if active_page == 'news' %} nav-icon-active {% endif %}">Новости</a>
+    <a href="{% url 'docs' %}" class="nav-icon {% if active_page == 'docs' %} nav-icon-active {% endif %}">Документы и отчёты</a>
+    <a href="{% url 'contacts' %}" class="nav-icon {% if active_page == 'contacts' %} nav-icon-active {% endif %}">Контакты</a>
+    <a href="{% url 'galery' %}" class="nav-icon last-icon {% if active_page == 'galery' %} nav-icon-active {% endif %}">Галерея</a>
+</nav>
