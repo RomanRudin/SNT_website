@@ -1,0 +1,29 @@
+{% extends "base_layout.html" %}
+
+{% block title %} СНТ "Флотское" - Подача счетчиков {% endblock %}
+
+{% block content %}
+
+{% with active_page='water_meters' %}
+{% include "../navbar.html" %}
+{% endwith %}
+
+<main>
+    <h2>Счетчики воды</h2>
+
+    {% for land_plot, water_meters in land_plots.items %}
+        <h3> {{ land_plot }}</h3>
+        {% for water_meter, water_meter_info in water_meters.items %}
+            <form action={% url 'water_submissions' water_meter.id %} method="post">
+                {% csrf_token %}
+                <table>
+                {{ water_meter_info.form }}
+                </table>
+                <input type="submit" value="Submit" />
+                <p>{{water_meter_info.last_submitted_value.value}}</p>
+            </form>
+        {% endfor %}
+    {% endfor %}
+</main>
+
+{% endblock %}

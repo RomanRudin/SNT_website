@@ -1,6 +1,7 @@
 from django.contrib import admin
-from .models import Contacts, Gallery, Docs, News, UsefuleInfo, SubmissionsElectricity, SubmissionsWater, Access, Users
-
+from django.contrib.auth.models import Group
+from .models import Contacts, Gallery, Docs, News, UsefuleInfo, SubmissionsElectricity, User, LandPlot, WaterMeter, WaterSubmission
+from .forms import GroupAdminForm
 
 
 class ContactsAdmin(admin.ModelAdmin):
@@ -21,14 +22,19 @@ class UsefuleInfoAdmin(admin.ModelAdmin):
 class SubmissionsElectricityAdmin(admin.ModelAdmin):
     fields = ["adress", "date", "data"]
 
-class SubmissionsWaterAdmin(admin.ModelAdmin):
-    fields = ["adress", "date", "data"]
+class UserAdmin(admin.ModelAdmin):
+    fields = ["email", "password", 'username', 'first_name', 'last_name']
 
-class AccessAdmin(admin.ModelAdmin):
-    fields = ["login"]
 
-class UsersAdmin(admin.ModelAdmin):
-    fields = ["login", "password"]
+class LandPlotAdmin(admin.ModelAdmin):
+    fields = ['user', 'street', 'house_number',  'district']
+
+
+class WaterMeterAdmin(admin.ModelAdmin):
+    fields = ['reg_number', 'land_plot', 'created_at']
+
+class WaterSubmissionAdmin(admin.ModelAdmin):
+    fields = ['value', 'created_at']
 
 
 
@@ -38,6 +44,21 @@ admin.site.register(Docs, DocsAdmin)
 admin.site.register(News, NewsAdmin)
 admin.site.register(UsefuleInfo, UsefuleInfoAdmin)
 admin.site.register(SubmissionsElectricity, SubmissionsElectricityAdmin)
-admin.site.register(SubmissionsWater, SubmissionsWaterAdmin)
-admin.site.register(Access, AccessAdmin)
-admin.site.register(Users, UsersAdmin)
+admin.site.register(User, UserAdmin)
+admin.site.register(LandPlot, LandPlotAdmin)
+admin.site.register(WaterMeter, WaterMeterAdmin)
+admin.site.register(WaterSubmission, WaterSubmissionAdmin)
+
+
+# Unregister the original Group admin.
+admin.site.unregister(Group)
+
+# Create a new Group admin.
+class GroupAdmin(admin.ModelAdmin):
+    # Use our custom form.
+    form = GroupAdminForm
+    # Filter permissions horizontal as well.
+    filter_horizontal = ['permissions']
+
+# Register the new Group ModelAdmin.
+admin.site.register(Group, GroupAdmin)

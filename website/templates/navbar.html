@@ -3,5 +3,14 @@
     <a href="{% url 'news' %}" class="nav-icon {% if active_page == 'news' %} nav-icon-active {% endif %}">Новости</a>
     <a href="{% url 'docs' %}" class="nav-icon {% if active_page == 'docs' %} nav-icon-active {% endif %}">Документы и отчёты</a>
     <a href="{% url 'contacts' %}" class="nav-icon {% if active_page == 'contacts' %} nav-icon-active {% endif %}">Контакты</a>
-    <a href="{% url 'galery' %}" class="nav-icon last-icon {% if active_page == 'galery' %} nav-icon-active {% endif %}">Галерея</a>
+    <a href="{% url 'galery' %}" class="nav-icon {% if active_page == 'galery' %} nav-icon-active {% endif %}">Галерея</a>
+
+    {% if user.is_authenticated %}
+        <a href="{% url 'water_meters' %}" class="nav-icon last-icon {% if active_page == 'water_meters' %} nav-icon-active {% endif %}">Подача показаний</a>
+
+        <li>User: {{ user.get_username }}</li>
+        <li><a href="{% url 'logout'%}?next={{request.path}}">Logout</a></li>
+    {% else %}
+        <li><a href="{% url 'login'%}?next={{request.path}}">Login</a></li>
+    {% endif %}
 </nav>
